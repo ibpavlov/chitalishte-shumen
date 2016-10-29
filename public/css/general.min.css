@@ -7,23 +7,32 @@
   margin-top: 20px;
 }
 
-.article-footer {
-  margin-top: 10px;
+.card footer {
+  border-top: 1px solid silver;
+  padding-top: 10px;
+  margin-top: 20px;
   font-size: 9pt;
   color: gray;
+  margin-bottom: -10px !important;
 }
-.article-footer bold, .article-footer b, .article-footer strong {
+.card footer bold, .card footer b, .card footer strong {
   color: black;
 }
+.card .cover {
+  height: 100px;
+}
+.card .cover h2 {
+  line-height: 300%;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px #000;
+  font-weight: bold;
+}
 
-.dropdown-menu > li > a {
-  display: block;
-  padding: 3px 20px;
-  clear: both;
-  font-weight: 400;
-  line-height: 1.42857143;
-  color: #333;
-  white-space: nowrap;
+.no-border {
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 /*# sourceMappingURL=general.min.css.map */

@@ -9,6 +9,7 @@ class Articles extends Model
     public function initialize()
     {
         $this->hasOne('creator_id', 'Users', 'id');
+        $this->belongsTo('object_id', 'Objects', 'id');
         $this->hasMany('id', 'Comments', 'article_id', [
             "params"=> [
                 'order'=>'date_added DESC'
