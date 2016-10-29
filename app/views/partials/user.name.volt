@@ -1,4 +1,4 @@
-{% if user %}
+{% if user|default(false) %}
     {% if user.first_name!='' OR user.last_name!='' %}
         <strong>{{ user.first_name }} {{ user.last_name }}</strong>
     {% else %}

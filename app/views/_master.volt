@@ -22,7 +22,7 @@
     <div class="container">
         <nav class="navbar navbar-light bg-faded" id="header">
             <a class="navbar-brand" href="#">
-                {% if object %}
+                {% if object|default(false) %}
                     {{ object.name }}
                 {% else %}
                     Читалище Шумен

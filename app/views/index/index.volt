@@ -10,7 +10,7 @@
         Създадена от:
         {{ partial("partials/user.name", ['user' : article.Users]) }}
         на {{ article.date_added }}
-        {% if article.date_last_edit %}|
+        {% if article.date_last_edit|default(false) %}|
             последна редакция {{ article.date_last_edit }}
             от
             {{ partial("partials/user.name", ['user' : article.editor]) }}

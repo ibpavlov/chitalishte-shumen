@@ -1,7 +1,7 @@
 {% extends "_master.volt" %}
 
 {% block body %}
-    {% if object.image %}
+    {% if object.image|default(false) %}
         <div class="pull-right"><img src="{{ object.image }}" class="img-fluid" style="width: 300px;" /></div>
     {% endif %}
 
@@ -19,7 +19,7 @@
         Създадена от:
         {{ partial("partials/user.name", ['user' : object.home.Users]) }}
         на {{ object.home.date_added }}
-        {% if object.home.date_last_edit %}|
+        {% if object.home.date_last_edit|default(false) %}|
             последна редакция {{ object.home.date_last_edit }}
             от
             {{ partial("partials/user.name", ['user' : object.home.editor]) }}
