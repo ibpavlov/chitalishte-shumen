@@ -7,6 +7,7 @@ class IndexController extends Controller
 
     public function indexAction()
     {
-        $this->view->home = Articles::getByIdent("home");
+        $this->view->objects = Objects::find();
+        $this->view->article = Articles::getByIdent("home");
     }
 }

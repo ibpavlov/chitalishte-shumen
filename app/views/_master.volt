@@ -21,13 +21,24 @@
 <body>
     <div class="container">
         <nav class="navbar navbar-light bg-faded" id="header">
-            <a class="navbar-brand" href="/">Читалище Шумен</a>
+            <a class="navbar-brand" href="#">
+                {% if object %}
+                    {{ object.name }}
+                {% else %}
+                    Читалище Шумен
+                {% endif %}
+            </a>
             <ul class="nav navbar-nav">
                 <li class="nav-item{% if router.getControllerName() == '' %} active{% endif %}">
                     <a href="/" class="nav-link">Начало</a>
                 </li>
-                <li class="nav-item{% if router.getControllerName() == 'objects' %} active{% endif %}">
-                    <a href="/objects/" class="nav-link">Читалища</a>
+                <li class="dropdown nav-item{% if router.getControllerName() == 'objects' %} active{% endif %}">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Читалища</a>
+                    <ul class="dropdown-menu">
+                        {% for menuObject in objects %}
+                        <li><a href="/object/index/{{ menuObject.id }}">{{ menuObject.name }}</a></li>
+                        {% endfor %}
+                    </ul>
                 </li>
             </ul>
         </nav>
