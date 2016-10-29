@@ -1,0 +1,19 @@
+#header {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#footer {
+  margin-top: 20px;
+}
+
+.article-footer {
+  margin-top: 10px;
+  font-size: 9pt;
+  color: gray;
+}
+.article-footer bold, .article-footer b, .article-footer strong {
+  color: black;
+}
+
+/*# sourceMappingURL=general.min.css.map */
