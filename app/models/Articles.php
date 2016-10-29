@@ -21,6 +21,11 @@ class Articles extends Model
                 "order" => "version DESC"
             ]
         ]);
+        $this->hasMany('id', 'Comments', 'article_id', [
+            "params"=> [
+                'order'=>'date_added DESC'
+            ]
+        ]);
     }
 
     public static function getByIdent($ident, $check_for_status = 'all')

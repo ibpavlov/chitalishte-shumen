@@ -10,6 +10,18 @@
     <div class="clearfix"></div>
     <hr />
 
+    <div class="row">
+        <div class="col-md-4">
+            {{  partial("partials/news",["news":object.news])  }}
+        </div>
+        <div class="col-md-4">
+            {{  partial("partials/events",["events":object.events])  }}
+        </div>
+        <div class="col-md-4">
+            {{  partial("partials/gallery",["images":object.images])  }}
+        </div>
+    </div>
+
     <h3>{{ object.home.latest.title }}</h3>
     <h5>{{ object.home.latest.subtitle }}</h5>
     <article>

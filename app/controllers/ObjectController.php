@@ -11,4 +11,6 @@ class ObjectController extends Controller
         $this->view->object = Objects::findFirst($id);
     }
 
+
+
 }
