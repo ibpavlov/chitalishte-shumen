@@ -9,15 +9,36 @@
         </div>
         <div class="card-block">
             <p class="pull-right">
-                <a href="/article/edit/{{ article.ident|default('na') }}" class="btn btn-sm btn-primary-outline"><i class="fa fa-pencil" aria-hidden="true"></i> редактирай</a>
-                <a href="/article/versions/{{ article.ident|default('na') }}" class="btn btn-sm btn-primary-outline"><i class="fa fa-code-fork" aria-hidden="true"></i> версии</a>
+                <a href="/article/render/{{ article.ident|default('na') }}" class="btn btn-sm btn-primary-outline"><i class="fa fa-arrow-left" aria-hidden="true"></i> назад</a>
             </p>
-            <h3 class="card-title">{{ article.title }}</h3>
-            <h4 class="card-subtitle">{{ article.subtitle }}</h4>
-            <br>
-            <article class="card-text">
-                {{ article.body|nl2br }}
-            </article>
+            <h3 class="card-title">Редактиране</h3>
+            <div class="clearfix"></div>
+            <form action="/article/save/{{ article.ident|default('na') }}" class="form" method="post" role="form">
+                <fieldset>
+                    <div class="form-group">
+                        <input type="text" name="title" class="form-control" placeholder="Заглавие" value="{{ article.title|e }}">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="subtitle" class="form-control" placeholder="Подзаглавие" value="{{ article.subtitle|e }}">
+                    </div>
+                    <div class="md-form">
+                        <textarea type="text" name="body" id="body" class="md-textarea" style="height: 200px;">{{ article.body|e }}</textarea>
+                        <label for="body">Коментар</label>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="email" name="email" value="" placeholder="Твоят e-mail адрес">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-success">Запиши промените</button>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
             <footer>
                 Създадена от:
                 {{ partial("partials/user.name", ['user' : article.Users]) }}
