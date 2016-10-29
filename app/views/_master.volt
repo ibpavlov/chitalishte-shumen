@@ -8,12 +8,20 @@
     <link rel="stylesheet" href="/public/css/bootstrap.min.css">
     <link rel="stylesheet" href="/public/css/mdb.min.css">
     <link rel="stylesheet" href="/public/css/general.min.css">
+    <link rel="stylesheet" href="/public/css/ekko-lightbox.min.css">
 
     <script type="text/javascript" src="/public/js/jquery-3.1.1.min.js"></script>
     <script src="/public/js/tether.min.js"></script>
     <script src="/public/js/bootstrap.min.js"></script>
     <script src="/public/js/mdb.min.js" type="text/javascript"></script>
+    <script src="/public/js/ekko-lightbox.min.js" type="text/javascript"></script>
     <script src="https://use.fontawesome.com/2ed134f9a4.js"></script>
+    <script>
+        $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });
+    </script>
 
     {# <script src="/public/js/moment.min.js"></script> #}
     {# <script src="/public/js/bootstrap-datetimepicker.min.js"></script> #}
