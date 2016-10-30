@@ -8,6 +8,17 @@ class ArticleController extends Controller
     {
         $this->view->objects = Objects::find();
         $article = Articles::getByIdent($ident);
+        if($article->parent_id == 0) {
+            $this->dispatcher->forward([
+                "controller" => "object",
+                "action" => "index",
+                "params" => [
+                    $article->object_id
+                ]
+            ]);
+            return;
+        }
+
         $this->view->article = $article;
         if ($article->object_id > 0) {
             // имаме обект към тази статия
@@ -19,6 +30,17 @@ class ArticleController extends Controller
     {
         $this->view->objects = Objects::find();
         $article = Articles::getByIdent($ident);
+        $this->view->article = $article;
+        if ($article->object_id > 0) {
+            // имаме обект към тази статия
+            $this->view->object = $article->Objects;
+        }
+    }
+
+    public function createAction($parentIdent)
+    {
+        $this->view->objects = Objects::find();
+        $article = Articles::getByIdent($parentIdent);
         $this->view->article = $article;
         if ($article->object_id > 0) {
             // имаме обект към тази статия

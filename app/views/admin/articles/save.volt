@@ -102,6 +102,20 @@
     </div>
 </div>
 
+<div class="form-group">
+    <label for="fieldVersion" class="col-sm-2 control-label">Version</label>
+    <div class="col-sm-10">
+        {{ text_field("version", "size" : 30, "class" : "form-control", "id" : "fieldVersion") }}
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldVersionParentId" class="col-sm-2 control-label">Version Of Parent</label>
+    <div class="col-sm-10">
+        {{ text_field("version_parent_id", "size" : 30, "class" : "form-control", "id" : "fieldVersionParentId") }}
+    </div>
+</div>
+
 
 <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">

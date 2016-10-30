@@ -2,11 +2,33 @@
 
 {% block body %}
     <div class="card">
-    <div class="card-block">
-        <div style="background: url(/draw.php?do=fixed&w=1110&h=300&path={{ object.image|default('public/images/cover3.jpg') }}) no-repeat center;" class="cover">
-            <h2 class="card-title">{{ object.name }}</h2>
+        <div class="card-block">
+            <div style="background: url(/draw.php?do=fixed&w=1110&h=300&path={{ object.image|default('public/images/cover3.jpg') }}) no-repeat center;" class="cover">
+                <h2 class="card-title">{{ object.name }}</h2>
+            </div>
         </div>
-    </div>
+        <div class="card-block">
+            <p class="pull-right">
+                <a href="/article/edit/{{ object.home.latest.ident|default('na') }}" class="btn btn-sm btn-primary-outline"><i class="fa fa-pencil" aria-hidden="true"></i> редактирай</a>
+                <a href="/article/versions/{{ object.home.latest.ident|default('na') }}" class="btn btn-sm btn-primary-outline"><i class="fa fa-code-fork" aria-hidden="true"></i> версии</a>
+            </p>
+            <h3 class="card-title">{{ object.home.latest.title }}</h3>
+            <h4 class="card-subtitle">{{ object.home.latest.subtitle }}</h4>
+            <br>
+            <article class="card-text">
+                {{ object.home.latest.body|nl2br }}
+            </article>
+            <footer>
+                Създадена от:
+                {{ partial("partials/user.name", ['user' : object.home.Users]) }}
+                на {{ object.home.date_added }}
+                {% if object.home.latest.date_last_edit|default(false) %}
+                    &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Последна редакция: {{ object.home.latest.date_last_edit }}
+                    от
+                    {{ partial("partials/user.name", ['user' : object.home.latest.Users]) }}
+                {% endif %}
+            </footer>
+        </div>
     </div>
     {% if object.image|default(false) %}
         <div class="pull-right"><img src="/{{ object.image }}" class="img-fluid" style="width: 300px;" /></div>
@@ -29,9 +51,4 @@
         </div>
     </div>
 
-    <h3>{{ object.home.latest.title }}</h3>
-    <h5>{{ object.home.latest.subtitle }}</h5>
-    <article>
-        {{ object.home.latest.body|nl2br }}
-    </article>
 {% endblock %}

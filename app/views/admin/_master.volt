@@ -28,6 +28,7 @@
     {# <link rel="stylesheet" href="/public/css/bootstrap-datetimepicker.min.css">#}
 </head>
 <body>
+    {{ partial('partials/messages') }}
     <div class="container">
         <nav class="navbar navbar-light bg-faded" id="header">
                 <a class="navbar-brand" href="/admin">Администрация - ЧИТАЛИЩА РЕГИОН ШУМЕН</a>

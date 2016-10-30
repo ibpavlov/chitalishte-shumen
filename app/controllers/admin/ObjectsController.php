@@ -146,7 +146,6 @@ class ObjectsController extends AdminController
      */
     public function saveAction()
     {
-
         if (!$this->request->isPost()) {
             $this->dispatcher->forward([
                 'controller' => "objects",

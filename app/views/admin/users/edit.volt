@@ -2,14 +2,14 @@
 <div class="row">
     <nav>
         <ul class="pager">
-            <li class="previous">{{ link_to("admin/users", "Go Back") }}</li>
+            <li class="previous">{{ link_to("admin/users", "Назад",'class':'btn btn-default') }}</li>
         </ul>
     </nav>
 </div>
 
 <div class="page-header">
     <h1>
-        Edit users
+        Редакция
     </h1>
 </div>
 

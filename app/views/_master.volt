@@ -28,6 +28,7 @@
     {# <link rel="stylesheet" href="/public/css/bootstrap-datetimepicker.min.css">#}
 </head>
 <body>
+<div class="alerts-wrapper"><?php $this->flash->output() ?></div>
     <div class="container">
         <nav class="navbar navbar-light bg-faded" id="header">
             {% if object|default(false) %}

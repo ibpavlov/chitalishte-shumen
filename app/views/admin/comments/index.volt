@@ -3,7 +3,7 @@
         Search comments
     </h1>
     <p>
-        {{ link_to("admin/comments/new", "Create comments") }}
+        {{ link_to("admin/comments/new", "Създай",'class':'btn btn-default') }}
     </p>
 </div>
 
@@ -49,7 +49,7 @@
 
 <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-        {{ submit_button('Search', 'class': 'btn btn-default') }}
+        {{ submit_button('Търси', 'class': 'btn btn-default') }}
     </div>
 </div>
 

@@ -186,15 +186,18 @@ class ArticlesController extends AdminController
             return;
         }
 
+       $date_deleted = $this->request->getPost("date_deleted");
+        if($date_deleted == "") {
+            $date_deleted = null;
+        }
+
         $article->ident = $this->request->getPost("ident");
         $article->parent_id = $this->request->getPost("parent_id");
         $article->object_id = $this->request->getPost("object_id");
         $article->title = $this->request->getPost("title");
         $article->subtitle = $this->request->getPost("subtitle");
         $article->body = $this->request->getPost("body");
-        $article->date_added = $this->request->getPost("date_added");
-        $article->date_last_edit = $this->request->getPost("date_last_edit");
-        $article->date_deleted = $this->request->getPost("date_deleted");
+        $article->date_deleted = $date_deleted;
         $article->status = $this->request->getPost("status");
         $article->type = $this->request->getPost("type");
         $article->creator_id = $this->request->getPost("creator_id");
@@ -223,6 +226,7 @@ class ArticlesController extends AdminController
             'controller' => "articles",
             'action' => 'index'
         ]);
+
     }
 
     /**

@@ -1,7 +1,6 @@
 <?php
 
 use Phalcon\Mvc\Model;
-use Phalcon\Mvc\Model\Validator\Email as Email;
 
 class Users extends Model
 {
@@ -64,20 +63,14 @@ class Users extends Model
      */
     public function validation()
     {
-        $this->validate(
-            new Email(
-                [
-                    'field'    => 'email',
-                    'required' => true,
-                ]
-            )
-        );
-
-        if ($this->validationHasFailed() == true) {
-            return false;
-        }
-
-        return true;
+        $validator = new \Phalcon\Validation();
+        $validator->add("ident",new \Phalcon\Validation\Validator\Email(
+            [
+                "message" => "Полето E-mail не е коректно въведено",
+                'required' => true,
+            ]
+        ));
+        return $this->validate($validator);
     }
 
     /**

@@ -35,4 +35,17 @@
   margin: 0 !important;
 }
 
-/*# sourceMappingURL=general.min.css.map */
+.alerts-wrapper {
+  position: absolute !important;
+  width: 100%;
+  top: 10px;
+  z-index: 1;
+}
+
+ul.pagination li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 0em;
+}
+
+/*# sourceMappingURL=general.css.map */

@@ -1,8 +1,8 @@
 <div class="row">
     <nav>
         <ul class="pager">
-            <li class="previous">{{ link_to("admin/articles/index", "Go Back") }}</li>
-            <li class="next">{{ link_to("admin/articles/new", "Create ") }}</li>
+            <li class="previous">{{ link_to("admin/articles/index", "Назад",'class':'btn btn-default') }}</li>
+            <li class="next">{{ link_to("admin/articles/new", "Създай",'class':'btn btn-default') }}</li>
         </ul>
     </nav>
 </div>
@@ -23,7 +23,6 @@
             <th>Object</th>
             <th>Title</th>
             <th>Subtitle</th>
-            <th>Body</th>
             <th>Date Of Added</th>
             <th>Date Of Last Of Edit</th>
             <th>Date Of Deleted</th>
@@ -47,7 +46,6 @@
             <td>{{ article.object_id }}</td>
             <td>{{ article.title }}</td>
             <td>{{ article.subtitle }}</td>
-            <td>{{ article.body }}</td>
             <td>{{ article.date_added }}</td>
             <td>{{ article.date_last_edit }}</td>
             <td>{{ article.date_deleted }}</td>

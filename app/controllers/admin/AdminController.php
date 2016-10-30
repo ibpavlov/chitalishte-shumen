@@ -13,7 +13,9 @@ class AdminController extends BaseController
     public function initialize()
     {
         parent::initialize();
-        $this->view->setViewsDir($this->view->getViewsDir()."admin/");
+        if(strpos($this->view->getViewsDir(),"admin/") == false) {
+            $this->view->setViewsDir($this->view->getViewsDir()."admin/");
+        }
     }
 
 }

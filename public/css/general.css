@@ -35,4 +35,13 @@
   margin: 0 !important;
 }
 
+.alerts-wrapper {
+  position: absolute !important;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  padding: 1em;
+  text-align: center;
+}
+
 /*# sourceMappingURL=general.css.map */

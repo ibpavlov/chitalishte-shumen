@@ -145,6 +145,7 @@ class Articles extends Model
 
     public function initialize()
     {
+        $this->setSource("articles");
         $this->hasOne('creator_id', 'Users', 'id');
         $this->belongsTo('object_id', 'Objects', 'id');
         $this->hasMany('id', 'Comments', 'article_id', [
@@ -200,6 +201,22 @@ class Articles extends Model
     }
 
     /**
+     * Validations and business logic
+     *
+     * @return boolean
+     */
+    public function validation()
+    {
+        $validator = new \Phalcon\Validation();
+        $validator->add("ident",new \Phalcon\Validation\Validator\PresenceOf(
+            [
+                "message" => "Ident колоната  е задължителна",
+            ]
+        ));
+        return $this->validate($validator);
+    }
+
+    /**
      * Event before object is saved
      */
     public function beforeCreate()
@@ -214,5 +231,19 @@ class Articles extends Model
     public function beforeUpdate()
     {
         $this->date_last_edit = date('Y-m-d H:i:s');
+    }
+
+    /**
+     * @param null $data
+     * @param null $whiteList
+     * @return bool
+     */
+    public function save($data = null, $whiteList = null)
+    {
+        try {
+            return parent::save($data, $whiteList);
+        } catch(\Exception $e) {
+            return false;
+        }
     }
 }

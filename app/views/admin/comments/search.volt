@@ -1,8 +1,8 @@
 <div class="row">
     <nav>
         <ul class="pager">
-            <li class="previous">{{ link_to("admin/comments/index", "Go Back") }}</li>
-            <li class="next">{{ link_to("admin/comments/new", "Create ") }}</li>
+            <li class="previous">{{ link_to("admin/comments/index", "Назад",'class':'btn btn-default') }}</li>
+            <li class="next">{{ link_to("admin/comments/new", "Създай",'class':'btn btn-default') }}</li>
         </ul>
     </nav>
 </div>
