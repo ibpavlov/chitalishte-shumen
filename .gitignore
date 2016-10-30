@@ -1,4 +1,4 @@
 .idea/
 app/views.cache/
-
+app/config/testing.ini
 /vendor/
