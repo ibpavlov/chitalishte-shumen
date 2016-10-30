@@ -8,32 +8,33 @@
 
 <div class="page-header">
     <h1>
-        Create objects
+        Създай Читалище
     </h1>
 </div>
 
 {{ content() }}
 
-{{ form("admin/objects/create", "method":"post", "autocomplete" : "off", "class" : "form-horizontal") }}
+{{ form("admin/objects/create", "method":"post", "autocomplete" : "off", "class" : "form-horizontal","enctype":"multipart/form-data") }}
 
 <div class="form-group">
-    <label for="fieldName" class="col-sm-2 control-label">Name</label>
+    <label for="fieldName" class="col-sm-2 control-label">Име</label>
     <div class="col-sm-10">
         {{ text_field("name", "size" : 30, "class" : "form-control", "id" : "fieldName") }}
     </div>
 </div>
 
 <div class="form-group">
-    <label for="fieldDescription" class="col-sm-2 control-label">Description</label>
+    <label for="fieldDescription" class="col-sm-2 control-label">Описание</label>
     <div class="col-sm-10">
         {{ text_area("description", "cols": "30", "rows": "4", "class" : "form-control", "id" : "fieldDescription") }}
     </div>
 </div>
+<div class="clearfix"></div>
 
 <div class="form-group">
-    <label for="fieldImage" class="col-sm-2 control-label">Image</label>
+    <label for="fieldImage" class="col-sm-2 control-label">Снимка</label>
     <div class="col-sm-10">
-        {{ text_field("image", "size" : 30, "class" : "form-control", "id" : "fieldImage") }}
+        <input type="file" name="image" class="form-control" />
     </div>
 </div>
 
@@ -52,7 +53,7 @@
 </div>
 
 <div class="form-group">
-    <label for="fieldUserId" class="col-sm-2 control-label">User</label>
+    <label for="fieldUserId" class="col-sm-2 control-label">Потребителско ID</label>
     <div class="col-sm-10">
         {{ text_field("user_id", "size" : 30, "class" : "form-control", "id" : "fieldUserId") }}
     </div>

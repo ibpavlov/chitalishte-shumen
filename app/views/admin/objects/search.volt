@@ -18,12 +18,10 @@
         <thead>
             <tr>
                 <th>Id</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Image</th>
+            <th>Име</th>
             <th>Lang</th>
             <th>Long</th>
-            <th>User</th>
+            <th>Потребителско ID</th>
 
                 <th></th>
                 <th></th>
@@ -35,14 +33,12 @@
             <tr>
                 <td>{{ object.id }}</td>
             <td>{{ object.name }}</td>
-            <td>{{ object.description }}</td>
-            <td>{{ object.image }}</td>
             <td>{{ object.lang }}</td>
             <td>{{ object.long }}</td>
             <td>{{ object.user_id }}</td>
 
-                <td>{{ link_to("admin/objects/edit/"~object.id, "Edit") }}</td>
-                <td>{{ link_to("admin/objects/delete/"~object.id, "Delete") }}</td>
+                <td>{{ link_to("admin/objects/edit/"~object.id, "Редакция") }}</td>
+                <td>{{ link_to("admin/objects/delete/"~object.id, "Изтрий") }}</td>
             </tr>
         {% endfor %}
         {% endif %}

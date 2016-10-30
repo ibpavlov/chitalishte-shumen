@@ -140,4 +140,18 @@ class Objects extends Model
     {
         $this->date_added = date('Y-m-d H:i:s');
     }
+
+    public function afterCreate()
+    {
+        $article = new Articles();
+        $article->ident = "chitalishte-".$this->id;
+        $article->object_id = $this->id;
+        $article->creator_id = 2;
+        $article->status = 'active';
+        $article->type = 'page';
+        $article->title = 'История';
+        $article->subtitle = 'Подзаглавие';
+        $article->body = 'Можете да добавите информация за това читалище';
+        $article->save();
+    }
 }

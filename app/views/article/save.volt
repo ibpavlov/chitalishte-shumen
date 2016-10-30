@@ -3,7 +3,7 @@
 {% block body %}
     <div class="card">
         <div class="card-block">
-            <div style="{% if object.image|default(false) %}background: url(/draw.php?do=fixed&w=1110&h=100&path={{ object.image }}) no-repeat center; {% endif %}" class="cover">
+            <div style="background: url(/draw.php?do=fixed&w=1110&h=100&path={{ object.image|default('public/images/cover3.jpg') }}) no-repeat center; " class="cover">
                 <h2 class="card-title">{{ object.name }}</h2>
             </div>
         </div>

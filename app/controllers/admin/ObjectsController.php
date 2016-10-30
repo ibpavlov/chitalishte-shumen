@@ -84,6 +84,7 @@ class ObjectsController extends AdminController
             }
 
             $this->view->id = $object->id;
+            $this->view->object = $object;
 
             $this->tag->setDefault("id", $object->id);
             $this->tag->setDefault("name", $object->name);
@@ -109,11 +110,21 @@ class ObjectsController extends AdminController
 
             return;
         }
+        if ($this->request->hasFiles() == true) {
+            foreach ($this->request->getUploadedFiles() as $file) {
+                $name = "uploads/".$file->getName();
+                $file->moveTo(__DIR__."/../../../uploads/".$file->getName());
+                break;
+            }
+            $image = $name;
+        } else {
+            $image = "";
+        }
 
         $object = new Objects();
         $object->name = $this->request->getPost("name");
         $object->description = $this->request->getPost("description");
-        $object->image = $this->request->getPost("image");
+        $object->image = $image;
         $object->lang = $this->request->getPost("lang");
         $object->long = $this->request->getPost("long");
         $object->user_id = $this->request->getPost("user_id");
@@ -132,7 +143,7 @@ class ObjectsController extends AdminController
             return;
         }
 
-        $this->flash->success("object was created successfully");
+        $this->flash->success("Читалището е добавено успешно");
 
         $this->dispatcher->forward([
             'controller' => "objects",
@@ -169,9 +180,18 @@ class ObjectsController extends AdminController
             return;
         }
 
+        if ($this->request->hasFiles() == true) {
+            foreach ($this->request->getUploadedFiles() as $file) {
+                $name = "uploads/".$file->getName();
+                $file->moveTo(__DIR__."/../../../uploads/".$file->getName());
+                break;
+            }
+            $object->image = $name;
+        } else {
+        }
+
         $object->name = $this->request->getPost("name");
         $object->description = $this->request->getPost("description");
-        $object->image = $this->request->getPost("image");
         $object->lang = $this->request->getPost("lang");
         $object->long = $this->request->getPost("long");
         $object->user_id = $this->request->getPost("user_id");
@@ -192,7 +212,7 @@ class ObjectsController extends AdminController
             return;
         }
 
-        $this->flash->success("object was updated successfully");
+        $this->flash->success("Читалището е обновено успешно");
 
         $this->dispatcher->forward([
             'controller' => "objects",
@@ -233,7 +253,7 @@ class ObjectsController extends AdminController
             return;
         }
 
-        $this->flash->success("object was deleted successfully");
+        $this->flash->success("Обекта е изтрит успешно");
 
         $this->dispatcher->forward([
             'controller' => "objects",

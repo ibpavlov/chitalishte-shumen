@@ -39,8 +39,8 @@
             <td>{{ image.date_added }}</td>
             <td>{{ image.creator_id }}</td>
 
-                <td>{{ link_to("admin/images/edit/"~image.id, "Edit") }}</td>
-                <td>{{ link_to("admin/images/delete/"~image.id, "Delete") }}</td>
+                <td>{{ link_to("admin/images/edit/"~image.id, "Промени") }}</td>
+                <td>{{ link_to("admin/images/delete/"~image.id, "Изтрий") }}</td>
             </tr>
         {% endfor %}
         {% endif %}

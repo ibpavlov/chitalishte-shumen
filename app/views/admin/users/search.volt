@@ -42,8 +42,8 @@
             <td>{{ user.active }}</td>
             <td>{{ user.type }}</td>
 
-                <td>{{ link_to("admin/users/edit/"~user.id, "Edit") }}</td>
-                <td>{{ link_to("admin/users/delete/"~user.id, "Delete") }}</td>
+                <td>{{ link_to("admin/users/edit/"~user.id, "Промени") }}</td>
+                <td>{{ link_to("admin/users/delete/"~user.id, "Изтрий") }}</td>
             </tr>
         {% endfor %}
         {% endif %}

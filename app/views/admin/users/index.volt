@@ -2,7 +2,7 @@
 
 <div class="page-header">
     <h1>
-        Search users
+        Търси потребител
     </h1>
     <p>
         {{ link_to("admin/users/new", "Създай",'class':'btn btn-default') }}
@@ -35,28 +35,28 @@
 </div>
 
 <div class="form-group">
-    <label for="fieldFirstName" class="col-sm-2 control-label">First Of Name</label>
+    <label for="fieldFirstName" class="col-sm-2 control-label">Име</label>
     <div class="col-sm-10">
         {{ text_field("first_name", "size" : 30, "class" : "form-control", "id" : "fieldFirstName") }}
     </div>
 </div>
 
 <div class="form-group">
-    <label for="fieldLastName" class="col-sm-2 control-label">Last Of Name</label>
+    <label for="fieldLastName" class="col-sm-2 control-label">Фамилия</label>
     <div class="col-sm-10">
         {{ text_field("last_name", "size" : 30, "class" : "form-control", "id" : "fieldLastName") }}
     </div>
 </div>
 
 <div class="form-group">
-    <label for="fieldActive" class="col-sm-2 control-label">Active</label>
+    <label for="fieldActive" class="col-sm-2 control-label">Активен</label>
     <div class="col-sm-10">
         {{ text_field("active", "type" : "numeric", "class" : "form-control", "id" : "fieldActive") }}
     </div>
 </div>
 
 <div class="form-group">
-    <label for="fieldType" class="col-sm-2 control-label">Type</label>
+    <label for="fieldType" class="col-sm-2 control-label">Тип</label>
     <div class="col-sm-10">
         {{ select_static("type", ['':"Всички",'user':"Потребител",'local_admin':'Отговорник','administrator':"Администратор"], "class" : "form-control", "id" : "fieldType") }}
     </div>

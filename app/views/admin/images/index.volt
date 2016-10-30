@@ -1,6 +1,6 @@
 <div class="page-header">
     <h1>
-        Search images
+        Търси снимки
     </h1>
     <p>
         {{ link_to("admin/images/new", "Създай",'class':'btn btn-default') }}
@@ -19,35 +19,35 @@
 </div>
 
 <div class="form-group">
-    <label for="fieldArticleId" class="col-sm-2 control-label">Article</label>
+    <label for="fieldArticleId" class="col-sm-2 control-label">Страница ID</label>
     <div class="col-sm-10">
         {{ text_field("article_id", "size" : 30, "class" : "form-control", "id" : "fieldArticleId") }}
     </div>
 </div>
 
 <div class="form-group">
-    <label for="fieldPath" class="col-sm-2 control-label">Path</label>
+    <label for="fieldPath" class="col-sm-2 control-label">Път</label>
     <div class="col-sm-10">
         {{ text_field("path", "size" : 30, "class" : "form-control", "id" : "fieldPath") }}
     </div>
 </div>
 
 <div class="form-group">
-    <label for="fieldTitle" class="col-sm-2 control-label">Title</label>
+    <label for="fieldTitle" class="col-sm-2 control-label">Заглаие</label>
     <div class="col-sm-10">
         {{ text_field("title", "size" : 30, "class" : "form-control", "id" : "fieldTitle") }}
     </div>
 </div>
 
 <div class="form-group">
-    <label for="fieldDateAdded" class="col-sm-2 control-label">Date Of Added</label>
+    <label for="fieldDateAdded" class="col-sm-2 control-label">Добавено</label>
     <div class="col-sm-10">
         {{ text_field("date_added", "size" : 30, "class" : "form-control", "id" : "fieldDateAdded") }}
     </div>
 </div>
 
 <div class="form-group">
-    <label for="fieldCreatorId" class="col-sm-2 control-label">Creator</label>
+    <label for="fieldCreatorId" class="col-sm-2 control-label">Създател ID</label>
     <div class="col-sm-10">
         {{ text_field("creator_id", "size" : 30, "class" : "form-control", "id" : "fieldCreatorId") }}
     </div>

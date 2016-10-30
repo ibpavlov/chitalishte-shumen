@@ -37,8 +37,8 @@
             <td>{{ comment.date_added }}</td>
             <td>{{ comment.body }}</td>
 
-                <td>{{ link_to("admin/comments/edit/"~comment.id, "Edit") }}</td>
-                <td>{{ link_to("admin/comments/delete/"~comment.id, "Delete") }}</td>
+                <td>{{ link_to("admin/comments/edit/"~comment.id, "Промени") }}</td>
+                <td>{{ link_to("admin/comments/delete/"~comment.id, "Изтрий") }}</td>
             </tr>
         {% endfor %}
         {% endif %}

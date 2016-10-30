@@ -3,7 +3,9 @@
 {% block body %}
 
     <div class="row center-block">
-        {{ content() }}
+        <div class="container">
+            {{ content() }}
+        </div>
     </div>
 
 {% endblock %}

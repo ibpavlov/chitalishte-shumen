@@ -2,8 +2,10 @@
 
 {% block body %}
 
-<div class="row center-block">
-    {{ content() }}
-</div>
+    <div class="row center-block">
+        <div class="container">
+            {{ content() }}
+        </div>
+    </div>
 
 {% endblock %}

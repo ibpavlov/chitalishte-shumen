@@ -55,7 +55,7 @@
 <div class="form-group">
     <label for="fieldType" class="col-sm-2 control-label">Type</label>
     <div class="col-sm-10">
-        {{ select_static("type", "using": [], "class" : "form-control", "id" : "fieldType") }}
+        {{ select_static("type", ['user':"Потребител",'local_admin':"Редактор",'administrator':"Администратор"], "class" : "form-control", "id" : "fieldType") }}
     </div>
 </div>
 

@@ -1,6 +1,6 @@
 <div class="page-header">
     <h1>
-        Search comments
+        Търси коментари
     </h1>
     <p>
         {{ link_to("admin/comments/new", "Създай",'class':'btn btn-default') }}

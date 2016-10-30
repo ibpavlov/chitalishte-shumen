@@ -19,18 +19,14 @@
             <tr>
                 <th>Id</th>
             <th>Ident</th>
-            <th>Parent</th>
-            <th>Object</th>
-            <th>Title</th>
-            <th>Subtitle</th>
-            <th>Date Of Added</th>
-            <th>Date Of Last Of Edit</th>
-            <th>Date Of Deleted</th>
-            <th>Status</th>
-            <th>Type</th>
-            <th>Creator</th>
-            <th>Version</th>
-            <th>Version Of Parent</th>
+            <th>Родител</th>
+            <th>Читалище</th>
+            <th>Заглавие</th>
+            <th>Подзагл.</th>
+            <th>Създадена</th>
+            <th>Статус</th>
+            <th>Тип</th>
+            <th>Версия</th>
 
                 <th></th>
                 <th></th>
@@ -47,16 +43,12 @@
             <td>{{ article.title }}</td>
             <td>{{ article.subtitle }}</td>
             <td>{{ article.date_added }}</td>
-            <td>{{ article.date_last_edit }}</td>
-            <td>{{ article.date_deleted }}</td>
             <td>{{ article.status }}</td>
             <td>{{ article.type }}</td>
-            <td>{{ article.creator_id }}</td>
             <td>{{ article.version }}</td>
-            <td>{{ article.version_parent_id }}</td>
 
-                <td>{{ link_to("admin/articles/edit/"~article.id, "Edit") }}</td>
-                <td>{{ link_to("admin/articles/delete/"~article.id, "Delete") }}</td>
+                <td>{{ link_to("admin/articles/edit/"~article.id, "Промени") }}</td>
+                <td>{{ link_to("admin/articles/delete/"~article.id, "Изтрий") }}</td>
             </tr>
         {% endfor %}
         {% endif %}

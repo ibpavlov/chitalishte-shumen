@@ -63,7 +63,7 @@ class ArticleController extends Controller
             $this->flash->error("URL пътя вече съшествува - въведете друг");
             $this->dispatcher->forward([
                 "controller" => "article",
-                "action" => "craete",
+                "action" => "create",
                 "params" => [
                     isset($_POST['parent_ident']) ? $_POST['parent_ident'] : ""
                 ]
