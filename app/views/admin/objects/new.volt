@@ -55,15 +55,15 @@
 <div class="form-group">
     <label for="fieldUserId" class="col-sm-2 control-label">Потребителско ID</label>
     <div class="col-sm-10">
-        {{ text_field("user_id", "size" : 30, "class" : "form-control", "id" : "fieldUserId") }}
+            {{ text_field("user_id", "size" : 30, "class" : "form-control", "id" : "fieldUserId") }}
+        </div>
     </div>
-</div>
 
 
-<div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-        {{ submit_button('Save', 'class': 'btn btn-default') }}
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            {{ submit_button('Save', 'class': 'btn btn-default') }}
+        </div>
     </div>
-</div>
 
-</form>
+    </form>
