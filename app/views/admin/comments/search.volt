@@ -8,7 +8,7 @@
 </div>
 
 <div class="page-header">
-    <h1>Search result</h1>
+    <h1>Резултати</h1>
 </div>
 
 {{ content() }}

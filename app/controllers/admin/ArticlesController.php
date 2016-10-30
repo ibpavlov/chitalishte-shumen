@@ -9,8 +9,9 @@ class ArticlesController extends AdminController
     /**
      * Index action
      */
-    public function indexAction()
+    public function indexAction($type = "")
     {
+        $this->view->type = $type;
         $this->persistent->parameters = null;
     }
 

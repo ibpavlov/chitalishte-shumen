@@ -28,7 +28,7 @@
 </div>
 
 <div class="form-group">
-    <label for="fieldPassword" class="col-sm-2 control-label">Password</label>
+    <label for="fieldPassword" class="col-sm-2 control-label">Парола</label>
     <div class="col-sm-10">
         {{ text_field("password", "size" : 30, "class" : "form-control", "id" : "fieldPassword") }}
     </div>

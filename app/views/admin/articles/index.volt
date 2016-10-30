@@ -19,6 +19,13 @@
 </div>
 
 <div class="form-group">
+    <label for="fieldType" class="col-sm-2 control-label">Type</label>
+    <div class="col-sm-10">
+        {{ select_static("type", ['':'Всички','news':'Новини','event':"Събития",'gallery':"Галерии",'page':"Страници"], "class" : "form-control", "id" : "fieldType","value":type) }}
+    </div>
+</div>
+
+<div class="form-group">
     <label for="fieldIdent" class="col-sm-2 control-label">Ident</label>
     <div class="col-sm-10">
         {{ text_field("ident", "size" : 30, "class" : "form-control", "id" : "fieldIdent") }}
@@ -85,13 +92,6 @@
     <label for="fieldStatus" class="col-sm-2 control-label">Status</label>
     <div class="col-sm-10">
         {{ select_static("status", ['':'Всички','inactive':"Неактивни",'active':"Активни",'archive':"Архиви",'delete':"Изтрити"], "class" : "form-control", "id" : "fieldStatus") }}
-    </div>
-</div>
-
-<div class="form-group">
-    <label for="fieldType" class="col-sm-2 control-label">Type</label>
-    <div class="col-sm-10">
-        {{ select_static("type", ['':'Всички','news':'Новини','event':"Събития",'gallery':"Галерии",'page':"Страници"], "class" : "form-control", "id" : "fieldType") }}
     </div>
 </div>
 

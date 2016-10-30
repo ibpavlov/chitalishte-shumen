@@ -9,7 +9,7 @@
 </div>
 
 <div class="page-header">
-    <h1>Search result</h1>
+    <h1>Резултати</h1>
 </div>
 
 {{ content() }}
@@ -20,7 +20,7 @@
             <tr>
                 <th>Id</th>
             <th>Email</th>
-            <th>Password</th>
+            <th>Парола</th>
             <th>First Of Name</th>
             <th>Last Of Name</th>
             <th>Active</th>

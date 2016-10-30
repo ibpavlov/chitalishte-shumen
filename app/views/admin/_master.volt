@@ -31,7 +31,7 @@
     {{ partial('partials/messages') }}
     <div class="container">
         <nav class="navbar navbar-light bg-faded" id="header">
-                <a class="navbar-brand" href="/admin">Администрация - ЧИТАЛИЩА РЕГИОН ШУМЕН</a>
+                <a class="navbar-brand" href="/admin">Администрация</a>
             <ul class="nav navbar-nav">
                 <li class="nav-item{% if router.getControllerName() == '' %} active{% endif %}">
                     <a href="/admin" class="nav-link">Начало</a>
@@ -48,10 +48,10 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="/objects/" id="supportedContentDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Страници</a>
                     <div class="dropdown-menu" aria-labelledby="supportedContentDropdown">
-                        <a class="dropdown-item" href="/admin/articles/news">Новини</a>
-                        <a class="dropdown-item" href="/admin/articles/event">Събития</a>
-                        <a class="dropdown-item" href="/admin/articles/page">Страници</a>
-                        <a class="dropdown-item" href="/admin/articles/gallery">Галерия</a>
+                        <a class="dropdown-item" href="/admin/articles/index/news">Новини</a>
+                        <a class="dropdown-item" href="/admin/articles/index/event">Събития</a>
+                        <a class="dropdown-item" href="/admin/articles/index/page">Страници</a>
+                        <a class="dropdown-item" href="/admin/articles/index/gallery">Галерия</a>
                     </div>
                 </li>
             </ul>

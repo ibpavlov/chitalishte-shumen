@@ -4,7 +4,7 @@
     <div class="container">
         {% for type, messages in _messageFlashSession %}
             {% for message in messages %}
-                <div class="alert alert-{{ type }}">
+                <div class="alert alert-{% if type=='error' %}danger{% else %}{{type}}{% endif %}">
                     <button type="button" class="close" data-dismiss="alert">&times;</button>
                     {{ message }}
                 </div>
