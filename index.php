@@ -14,7 +14,8 @@ try {
 	// Register an autoloader
 	$loader = new Loader();
 	$loader->registerDirs(array(
-		'app/controllers/',
+        'app/controllers/',
+        'app/controllers/admin/',
 		'app/models/'
 	));
 
@@ -87,8 +88,36 @@ try {
 	// Handle the request
 	$application = new Application($di);
 
+    // Define a route
+    $application->router->add(
+        "/admin/:controller/:action/:params",
+        [
+            "controller" => 1,
+            "action"     => 2,
+            "params"     => 3,
+        ]
+    );
+    // Define a route
+    $application->router->add(
+        "/admin/:controller",
+        [
+            "controller" => 1
+        ]
+    );
+    // Define a route
+    $application->router->add(
+        "/admin",
+        [
+            "controller" => "objects"
+        ]
+    );
+
 	echo $application->handle()->getContent();
 
 } catch (\Exception $e) {
 	 echo "PhalconException: ", $e->getMessage();
+    echo "<pre>";
+    print_r($e->getTraceAsString());
+    echo "</pre>";
+    var_dump($e->getTrace());
 }

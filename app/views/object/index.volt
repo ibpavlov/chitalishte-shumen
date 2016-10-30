@@ -1,8 +1,15 @@
 {% extends "_master.volt" %}
 
 {% block body %}
+    <div class="card">
+    <div class="card-block">
+        <div style="background: url(/draw.php?do=fixed&w=1110&h=300&path={{ object.image|default('public/images/cover3.jpg') }}) no-repeat center;" class="cover">
+            <h2 class="card-title">{{ object.name }}</h2>
+        </div>
+    </div>
+    </div>
     {% if object.image|default(false) %}
-        <div class="pull-right"><img src="{{ object.image }}" class="img-fluid" style="width: 300px;" /></div>
+        <div class="pull-right"><img src="/{{ object.image }}" class="img-fluid" style="width: 300px;" /></div>
     {% endif %}
 
     <h1>{{ object.name }}</h1>
@@ -27,15 +34,4 @@
     <article>
         {{ object.home.latest.body|nl2br }}
     </article>
-    <p class="article-footer">
-        Създадена от:
-        {{ partial("partials/user.name", ['user' : object.home.Users]) }}
-        на {{ object.home.date_added }}
-        {% if object.home.date_last_edit|default(false) %}|
-            последна редакция {{ object.home.date_last_edit }}
-            от
-            {{ partial("partials/user.name", ['user' : object.home.editor]) }}
-        {% endif %}
-    </p>
-    {{  partial("partials/comments", ['article':object.home]) }}
 {% endblock %}

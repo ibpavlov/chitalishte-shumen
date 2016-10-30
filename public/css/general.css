@@ -1,0 +1,38 @@
+#header {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#footer {
+  margin-top: 20px;
+}
+
+.card footer {
+  border-top: 1px solid silver;
+  padding-top: 10px;
+  margin-top: 20px;
+  font-size: 9pt;
+  color: gray;
+  margin-bottom: -10px !important;
+}
+.card footer bold, .card footer b, .card footer strong {
+  color: black;
+}
+.card .cover {
+  height: 100px;
+}
+.card .cover h2 {
+  line-height: 300%;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px #000;
+  font-weight: bold;
+}
+
+.no-border {
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/*# sourceMappingURL=general.css.map */

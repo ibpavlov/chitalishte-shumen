@@ -52,6 +52,7 @@
         {% block body %}
 
         {% endblock %}
+        <div class="clearfix"></div>
         <nav class="navbar navbar-light bg-faded" id="header">
             <ul class="nav navbar-nav">
                 <li class="nav-item{% if router.getControllerName() == '' %} active{% endif %}">

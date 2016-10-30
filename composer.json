@@ -1,0 +1,16 @@
+{
+    "name": "chsh/chitalishte-shumen",
+    "description": "Public wiki about all community centers in Shumen area",
+    "require": {
+        "phalcon/devtools": "dev-master",
+        "phalcon/incubator": "^3.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ivelin Pavlov",
+            "email": "ibpavlov@gmail.com"
+        }
+    ],
+    "minimum-stability": "beta"
+}
