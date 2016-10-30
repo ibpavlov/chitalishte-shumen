@@ -1,4 +1,4 @@
-<h5>Новини:</h5>
+<h2>Новини:</h2>
 {% if news|default(false) AND news.count() > 0 %}
     <div class="list-group">
     {% for post in news %}

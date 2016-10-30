@@ -9,6 +9,7 @@
         </div>
         <div class="card-block">
             <p class="pull-right">
+                <a href="/article/create/{{ article.ident|default('na') }}" class="btn btn-sm btn-success-outline"><i class="fa fa-plus" aria-hidden="true"></i> добави</a>
                 <a href="/article/edit/{{ article.ident|default('na') }}" class="btn btn-sm btn-primary-outline"><i class="fa fa-pencil" aria-hidden="true"></i> редактирай</a>
                 <a href="/article/versions/{{ article.ident|default('na') }}" class="btn btn-sm btn-primary-outline"><i class="fa fa-code-fork" aria-hidden="true"></i> версии</a>
             </p>

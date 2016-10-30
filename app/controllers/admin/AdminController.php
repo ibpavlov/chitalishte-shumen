@@ -16,6 +16,13 @@ class AdminController extends BaseController
         if(strpos($this->view->getViewsDir(),"admin/") == false) {
             $this->view->setViewsDir($this->view->getViewsDir()."admin/");
         }
+        if(isset($_GET['admin_pass']) && $_GET['admin_pass'] == "shumen") {
+            $this->session->set("admin","shumen");
+        }
+        if(!($this->session->has("admin") && $this->session->get("admin") == "shumen")) {
+            $this->flash->error("Нямате права");
+            $this->response->redirect("/");
+        }
     }
 
 }

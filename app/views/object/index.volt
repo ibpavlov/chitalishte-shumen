@@ -3,12 +3,15 @@
 {% block body %}
     <div class="card">
         <div class="card-block">
-            <div style="background: url(/draw.php?do=fixed&w=1110&h=300&path={{ object.image|default('public/images/cover3.jpg') }}) no-repeat center;" class="cover">
-                <h2 class="card-title">{{ object.name }}</h2>
-            </div>
+            <a href="/{{ object.image|default('public/images/cover3.jpg') }}" data-toggle="lightbox">
+                <div style="background: url(/draw.php?do=fixed&w=1110&h=300&path={{ object.image|default('public/images/cover3.jpg') }}) no-repeat center;" class="cover">
+                    <h2 class="card-title">{{ object.name }}</h2>
+                </div>
+            </a>
         </div>
         <div class="card-block">
             <p class="pull-right">
+                <a href="/article/create/{{ object.home.latest.ident|default('na') }}" class="btn btn-sm btn-success-outline"><i class="fa fa-plus" aria-hidden="true"></i> добави</a>
                 <a href="/article/edit/{{ object.home.latest.ident|default('na') }}" class="btn btn-sm btn-primary-outline"><i class="fa fa-pencil" aria-hidden="true"></i> редактирай</a>
                 <a href="/article/versions/{{ object.home.latest.ident|default('na') }}" class="btn btn-sm btn-primary-outline"><i class="fa fa-code-fork" aria-hidden="true"></i> версии</a>
             </p>
@@ -30,14 +33,6 @@
             </footer>
         </div>
     </div>
-    {% if object.image|default(false) %}
-        <div class="pull-right"><img src="/{{ object.image }}" class="img-fluid" style="width: 300px;" /></div>
-    {% endif %}
-
-    <h1>{{ object.name }}</h1>
-    <p>{{ object.description }}</p>
-    <div class="clearfix"></div>
-    <hr />
 
     <div class="row">
         <div class="col-md-4">

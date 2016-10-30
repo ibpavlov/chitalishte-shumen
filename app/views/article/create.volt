@@ -13,17 +13,25 @@
             </p>
             <h3 class="card-title">Добавяне на подстраница</h3>
             <div class="clearfix"></div>
-            <form action="/article/save" class="form" method="post" role="form">
+            <form action="/article/createsave" class="form" method="post" role="form">
                 <fieldset>
-                    <div class="form-group">
-                        <input type="text" name="title" class="form-control" placeholder="Заглавие" value="{{ article.title|e }}">
+                    <div class="md-form">
+                        {{ select_static("type", ['news':'Новинa','event':"Събитиe",'gallery':"Галериq",'page':"Страницa"], "class" : "form-control", "id" : "fieldType","placeholder":"Тип страница") }}
+                    </div>
+                    <div class="md-form">
+                        <input type="text" name="ident" class="form-control" placeholder="Път (URL)" value="">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="subtitle" class="form-control" placeholder="Подзаглавие" value="{{ article.subtitle|e }}">
+                        <input type="text" name="title" class="form-control" placeholder="Заглавие" value="">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="subtitle" class="form-control" placeholder="Подзаглавие" value="">
                     </div>
                     <div class="md-form">
                         <textarea type="text" name="body" id="body" class="md-textarea" style="height: 200px;">{{ article.body|e }}</textarea>
                         <label for="body">Коментар</label>
+                    </div>
+                    <div class="col-sm-10">
                     </div>
                     <div class="row">
                         <div class="col-md-6">
@@ -35,7 +43,8 @@
                             <div class="form-group">
                                 <input type="hidden" name="parent_id" value="{{ article.id|e }}" />
                                 <input type="hidden" name="parent_ident" value="{{ article.ident|e }}" />
-                                <input type="hidden" name="parent_ident" value="{{ article.ident|e }}" />
+                                <input type="hidden" name="object_id" value="{{ article.object_id|e }}" />
+                                <input type="hidden" name="status" value="active" />
                                 <button type="submit" class="btn btn-success">Запиши промените</button>
                             </div>
                         </div>

@@ -1,4 +1,4 @@
-<h5>Събития:</h5>
+<h2>Събития:</h2>
 {% if events|default(false) AND events.count() > 0 %}
     <div class="list-group">
     {% for post in events %}
