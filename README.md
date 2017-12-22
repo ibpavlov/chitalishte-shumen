@@ -31,7 +31,10 @@
 
 ### Как да го инсталираме ###
 
-1. Трябва да нагласите сървъра ви да сочи към главната папка на проекта с rewrite access, и да е основен домейн. Можете директно да използвате [PHP Build in Server](http://php.net/manual/en/features.commandline.webserver.php)  
+1. Като инициализирате [composer](https://getcomposer.org/) 
+`composer install`
+2. Можете директно да използвате [PHP Build in Server](http://php.net/manual/en/features.commandline.webserver.php)   
+`php -S localhost:8000 -t public .htrouter.php` 
 2. Да качите базата данни от папка /scheme където желаете - localhost или remote
 3. Да създадете копие на файла /app/config/config.dist.ini и вече може да започнете
 4. Готово, може да тествате дали работи
