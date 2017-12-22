@@ -35,6 +35,6 @@
 `composer install`
 2. Можете директно да използвате [PHP Build in Server](http://php.net/manual/en/features.commandline.webserver.php)   
 `php -S localhost:8000 -t public .htrouter.php` 
-2. Да качите базата данни от папка /scheme където желаете - localhost или remote
-3. Да създадете копие на файла /app/config/config.dist.ini и вече може да започнете
-4. Готово, може да тествате дали работи
+3. Да качите базата данни от папка /scheme където желаете - localhost или remote
+4. Да създадете копие на файла /app/config/config.dist.ini и вече може да започнете
+5. Готово, може да тествате дали работи
