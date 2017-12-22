@@ -108,7 +108,7 @@ class Objects extends Model
      */
     public function getSource()
     {
-        return 'Objects';
+        return 'objects';
     }
 
     /**

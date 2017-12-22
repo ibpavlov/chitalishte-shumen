@@ -1,4 +1,5 @@
 .idea/
-app/views.cache/
+composer.lock
 app/config/testing.ini
+app/config/config.ini
 /vendor/

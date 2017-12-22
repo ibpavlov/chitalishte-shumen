@@ -150,7 +150,6 @@ try {
             "controller" => "objects"
         ]
     );
-
     echo $application->handle()->getContent();
 
 } catch (\Exception $e) {
